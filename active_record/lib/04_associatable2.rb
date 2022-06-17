@@ -18,7 +18,7 @@ module Associatable
 			source_pk = source_options.primary_key 
 			source_fk = source_options.foreign_key 
 
-			key_val = self.senwd(through_fk) 
+			key_val = self.send(through_fk) 
 			results = DBConnection.execute(<<-SQL, key_val)
 				SELECT 
 					#{source_table}.* 
